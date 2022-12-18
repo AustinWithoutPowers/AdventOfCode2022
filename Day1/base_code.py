@@ -1,3 +1,23 @@
+#################################################
+
+# iterates over array and "trims" all the entries
+def __remove_newlines(line_array):
+  newlineless_array = []
+  for line in line_array:
+    newlineless_array += [line.strip()]
+  return newlineless_array
+
+# reads input file and returns array of lines
+def __get_file_data(input_file_path):
+  input_file = open(input_file_path, 'r')
+  return __remove_newlines(input_file.readlines())
+
+# main chunk
+def process_input_file(input_file_path):
+  return __get_file_data(input_file_path)
+
+#################################################
+
 # merge sort, it's a goodie
 def mergesort(input_array):
   arr1 = input_array[:len(input_array) // 2]
@@ -27,3 +47,4 @@ def mergesort(input_array):
       else: return_arr += [sorted2.pop(0)]
     
     return return_arr
+#################################################

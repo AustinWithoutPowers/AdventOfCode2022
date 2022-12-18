@@ -1,5 +1,7 @@
+import base_code
+
 INPUT_FILE_PATH = '.\\day1_text.txt'
-# INPUT_FILE_PATH = '.\\day1_text_example.txt'
+# INPUT_FILE_PATH = '.\\day1_text_example.txt' # example answer is 24000
 
 # best function name ever
 def find_most_calorie_carrying_elf(line_array):
@@ -16,20 +18,9 @@ def find_most_calorie_carrying_elf(line_array):
         print('Probably the int/str conversion...\n')
   print(max(elf_array))
 
-# iterates over array and "trims" all the entries
-def remove_newlines(line_array):
-  newlineless_array = []
-  for line in line_array:
-    newlineless_array += [line.strip()]
-  find_most_calorie_carrying_elf(newlineless_array)
-
-# reads input file and returns array of lines
-def get_file_data():
-  input_file = open(INPUT_FILE_PATH, 'r')
-  remove_newlines(input_file.readlines())
-
 # main chunk
 def main():
-  get_file_data()
+  find_most_calorie_carrying_elf( \
+    base_code.process_input_file(INPUT_FILE_PATH))
 
 main()

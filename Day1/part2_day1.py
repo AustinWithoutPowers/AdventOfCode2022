@@ -1,12 +1,11 @@
-from mergesort import mergesort
+import base_code
 
 INPUT_FILE_PATH = '.\\day1_text.txt'
 # INPUT_FILE_PATH = '.\\day1_text_example.txt'
 
 # takes all the elves and counts the largest x elves calories
 def max_loop(elf_array, loop_count):
-  print(elf_array)
-  sorted_elf_array = mergesort(elf_array)
+  sorted_elf_array = base_code.mergesort(elf_array)
   total_calorie_count = 0
   for _ in range(loop_count):
     total_calorie_count += sorted_elf_array.pop(len(sorted_elf_array) - 1)
@@ -28,20 +27,9 @@ def find_most_calorie_carrying_elf(line_array):
         print('Probably the int/str conversion...\n')
   max_loop(elf_array, 3)
 
-# iterates over array and "trims" all the entries
-def remove_newlines(line_array):
-  newlineless_array = []
-  for line in line_array:
-    newlineless_array += [line.strip()]
-  find_most_calorie_carrying_elf(newlineless_array)
-
-# reads input file and returns array of lines
-def get_file_data():
-  input_file = open(INPUT_FILE_PATH, 'r')
-  remove_newlines(input_file.readlines())
-
 # main chunk
 def main():
-  get_file_data()
+  find_most_calorie_carrying_elf( \
+    base_code.process_input_file(INPUT_FILE_PATH))
 
 main()
