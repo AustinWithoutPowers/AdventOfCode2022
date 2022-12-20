@@ -12,15 +12,21 @@ PLAY_DICT = {'A': ROCK, 'B': PAPER, 'C': SCISSORS}
 # takes an integer and a letter and calculates the points
 def get_result(opponent_move, outcome):
   if outcome == 'X':
-    if opponent_move == 1:
-      return 2
-    return 0 + opponent_move - 1
-  elif outcome == 'Y':
-    return 3 + opponent_move
-  else:
-    if opponent_move == 3:
-      return 7
-    return 6 + opponent_move + 1
+    if opponent_move == ROCK:
+      return SCISSORS
+    if opponent_move == SCISSORS:
+      return PAPER
+    if opponent_move == PAPER:
+      return ROCK
+  if outcome == 'Y':
+    return 3 + opponent_move # 
+  if outcome == 'Z':
+    if opponent_move == ROCK:
+      return 6 + PAPER
+    if opponent_move == SCISSORS:
+      return 6 + ROCK
+    if opponent_move == PAPER:
+      return 6 + SCISSORS
 
 def get_score(input_array):
   total_points = 0
