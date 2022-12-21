@@ -1,7 +1,7 @@
 import base_code
 
-# INPUT_FILE_PATH = '.\\day3_text.txt'
-INPUT_FILE_PATH = '.\\day3_text_example.txt' # example answer is 157
+INPUT_FILE_PATH = '.\\day3_text.txt'
+# INPUT_FILE_PATH = '.\\day3_text_example.txt' # example answer is 157
 
 # finds the wrong item and returns the priority (int)
 def get_wrong_item(rucksack):
@@ -12,7 +12,6 @@ def get_wrong_item(rucksack):
     for second_item in second_compartment:
       if first_item == second_item:
         if ord(first_item) < 91:
-          print(ord(first_item) - 38)
           return ord(first_item) - 38
         return ord(first_item) - 96
 
